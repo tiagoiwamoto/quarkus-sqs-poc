@@ -1,6 +1,7 @@
 package br.com.kamehouse.sqs.entrypoint;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
 import jakarta.inject.Inject;
 import jakarta.ws.rs.GET;
 import jakarta.ws.rs.Path;
@@ -18,10 +19,13 @@ public class SqsProducer {
 
     @GET
     public Boolean enviarMensagem(){
-        MessageRecord message = new MessageRecord(1L, UUID.randomUUID(), "", LocalDate.now());
+
+        MessageRecord message = new MessageRecord(1L, UUID.randomUUID(), "teste", LocalDate.now());
         ObjectMapper mapper = new ObjectMapper();
+        mapper.findAndRegisterModules();
         try{
             var sqsMessage = mapper.writeValueAsString(message);
+
             SendMessageResponse response =
                     sqsClient.sendMessage(m -> m.queueUrl("quarkus-poc").messageBody(sqsMessage));
         }catch (Exception e){

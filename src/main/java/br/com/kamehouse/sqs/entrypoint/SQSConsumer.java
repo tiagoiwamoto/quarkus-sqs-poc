@@ -3,6 +3,7 @@ package br.com.kamehouse.sqs.entrypoint;
 import io.quarkus.vertx.ConsumeEvent;
 import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.inject.Inject;
+import org.eclipse.microprofile.reactive.messaging.Incoming;
 import software.amazon.awssdk.services.sqs.SqsClient;
 import software.amazon.awssdk.services.sqs.model.Message;
 import software.amazon.awssdk.services.sqs.model.ReceiveMessageRequest;
@@ -25,7 +26,8 @@ public class SQSConsumer {
 //        Message sqsMessage = sqsClient.receiveMessage(receiveMessageRequest).messages().getFirst();
 //    }
 
-    @ConsumeEvent(value = "eventbus-message")
+//    @ConsumeEvent(value = "emitter-message")
+    @Incoming(value = "emitter-message")
     public void sqsConsumer(MessageRecord message){
         System.out.println(message);
     }

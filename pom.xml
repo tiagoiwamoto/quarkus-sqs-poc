@@ -47,6 +47,10 @@
     </dependency>
 
     <!-- SQS -->
+    <dependency>
+      <groupId>io.quarkus</groupId>
+      <artifactId>quarkus-smallrye-reactive-messaging</artifactId>
+    </dependency>
     <!-- https://mvnrepository.com/artifact/io.quarkus/quarkus-scheduler -->
     <dependency>
       <groupId>io.quarkus</groupId>
@@ -54,23 +58,30 @@
       <version>3.5.3</version>
     </dependency>
     <!-- https://mvnrepository.com/artifact/com.amazonaws/amazon-sqs-java-messaging-lib -->
-    <dependency>
-      <groupId>com.amazonaws</groupId>
-      <artifactId>amazon-sqs-java-messaging-lib</artifactId>
-      <version>2.1.1</version>
-    </dependency>
+<!--    <dependency>-->
+<!--      <groupId>com.amazonaws</groupId>-->
+<!--      <artifactId>amazon-sqs-java-messaging-lib</artifactId>-->
+<!--      <version>2.1.1</version>-->
+<!--    </dependency>-->
     <!-- https://mvnrepository.com/artifact/com.amazonaws/aws-java-sdk-sqs -->
-    <dependency>
-      <groupId>com.amazonaws</groupId>
-      <artifactId>aws-java-sdk-sqs</artifactId>
-      <version>1.12.597</version>
-    </dependency>
+<!--    <dependency>-->
+<!--      <groupId>com.amazonaws</groupId>-->
+<!--      <artifactId>aws-java-sdk-sqs</artifactId>-->
+<!--      <version>1.12.597</version>-->
+<!--    </dependency>-->
     <!-- https://mvnrepository.com/artifact/io.quarkiverse.amazonservices/quarkus-amazon-sqs -->
     <dependency>
       <groupId>io.quarkiverse.amazonservices</groupId>
       <artifactId>quarkus-amazon-sqs</artifactId>
       <version>2.7.2</version>
     </dependency>
+    <!-- https://mvnrepository.com/artifact/software.amazon.awssdk/url-connection-client -->
+    <dependency>
+      <groupId>software.amazon.awssdk</groupId>
+      <artifactId>url-connection-client</artifactId>
+      <version>2.21.33</version>
+    </dependency>
+
     <!-- /SQS -->
 
 
